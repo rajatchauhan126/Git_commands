@@ -79,4 +79,21 @@ git log -- hipster.txt //
 git log -- follow -- level1/level2   //follow the rename
 git show  51d88a9f23e5a0bbefb3b50cb24b173ee61c0c99
 
+----------------------------------------------------Git alias---------------------------------
+  create alias for big commands
   
+--git config --global alias.hist "log --all --oneline --graph --decorate"
+//hist is name of the alias
+location where all these alias sit
+  notepad++ ~/.gitconfig
+  
+--------------------------------------------------ignoring unwanted file and folder----------
+create .gitignore 
+  echo "" >> .gitignore
+open the file and enter the file name which you want to ignore
+filename //file
+log/ //folder
+node_module/  //folder
+
+--------------------------------------------------
+
