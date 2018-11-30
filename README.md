@@ -34,6 +34,8 @@ set the default editor to notepad++ :
     git add .
   commit the changes
     git commit -m "add first coomit"
+  pull
+    git pull origin master
   push the code
     git push origin master
     
@@ -47,5 +49,34 @@ set the default editor to notepad++ :
 --clone a repository
   git clone path
   
---  
+----------------------------------------------------------------------------------  
+add and commit directly
+git commit -am "adding more text"
+
+----
+backout the changes from the stagging area to working directory.
+
+git reset head level1_file.txt
+
+don't want to make any changes, back to clean working directory, to last commited stage.
+
+git checkout -- level1_file.txt
+
+----------------------------------rename a file-------------
+git mv level3_file.txt level3.txt
+
+-------------------------------------------------------------------------------------------------------------------------------
+for deleleting a file in windows cmd
+  del /f filname.txt
+  
+--------------------------------------log--------------
+git log  //in reverse order(recent first)
+git log --abbrev-commit   // show in commit in 7 character only
+git log --oneline --graph --decorate // compress in one line, asci graph provide, add any label for annotate our commit.
+git log  410f4f4...3d45b58 //log between 2 commits
+git log --since="3 days ago" //day based searching
+git log -- hipster.txt //
+git log -- follow -- level1/level2   //follow the rename
+git show  51d88a9f23e5a0bbefb3b50cb24b173ee61c0c99
+
   
