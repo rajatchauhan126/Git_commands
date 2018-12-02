@@ -95,5 +95,26 @@ filename //file
 log/ //folder
 node_module/  //folder
 
---------------------------------------------------
+--------------------------------------------------Visual diff/merge tool setup------------------------
+--p4merge for window install
+--go to perforce.com
+--download -> select p4merge visual merge tool -> download
+--skip registration
+--open and run the installer. 
+--deselect all expect visual merge tool.
+--next with all the next steps.  //completed installation
+
+---open git bash
+--set the path in advance setting "C:\Program Files\Perforce"
+
+--git config --global merge.tool p4merge
+--git config --global mergetool.p4merge.path "c:/program files/perforce/p4mere.exe"
+--git config --global mergetool.prompt false
+
+---diff tool config
+--git config --global diff.tool p4merge
+--git config --global difftool.p4merge.path "c:/program files/perforce/p4mere.exe"
+--git config --global difftool.prompt false
+
+--git config --global -e
 
