@@ -288,11 +288,15 @@ git push origin :v-0.8-alpha  //delete a tag, still have in local but not in    
 //Remove the last commit and point to second last
 
 --git log --graph --decorate --all --oneline
---git 
+--git reset HEAD^2 //for two level back
+
+-------------
+--git reflog //log of everything we have done,log will not show deleted one
+--git reset e397653 //commit id, back to that particular commit
+--git reset HEAD@{2}
 
 
-
-
+//recover within 60 days
 
 
 
