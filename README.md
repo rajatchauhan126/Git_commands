@@ -118,3 +118,177 @@ node_module/  //folder
 
 --git config --global -e
 
+-----------------------------------------Comparisions--------------------------
+---working directory and stagging area
+
+--git diff
+--git difftool
+
+---working directory and git stagging area
+
+--git diff HEAD    //head pointer reference , diff in working directory and git stagging
+--git difftool HEAD  //
+
+--stagging area vs git repository
+
+--git diff --staged HEAD //HEAD means last commit on current branch
+--git difftool --staged HEAD 
+
+-----------------------------------------Comparing between commits-----------------------
+
+--git log --oneline
+--git diff 51d88a9 HEAD // head - last commit in current branch
+--git diff HEAD HEAD^  //head upcaret means -1
+
+--git difftool HEAD HEAD^
+--git difftool 51d88a9 d8851a9  //commit id one and two
+
+------------------------------------local vs remote master branches
+--git diff master origin/master   //master (@HEAD) - local repository, remore repository - origin/master
+
+--------------------------------------b--------Branching-------------------
+--git branch mynewbranch
+--git checkout mynewbranch
+
+--git checkout -b mynewbranch2
+--git branch -m mynewbranch2 newbranch3 //rename the branch
+--git branch -a //to see all branch
+--git branch -d mynewbranch //should not be on the same branch
+
+--------------------------Happy path/fast forward merge------------------
+--git branch
+--git branch -a
+--git diff master mynewbranch2
+
+--from master
+--git merge mynewbranch2
+
+-----
+--git checkout -b add-copyright
+--git merge add-copyright --no-ff
+
+--------------------------------------Automatic merge-----------------------------
+--git checkout -b simple-changes
+--git merge simple-changes -m "merging from simple-changes" //commits will be there in master only label remove when deleting the simple-changes branch.
+
+--------------------------------conflicting merges and resolution-----------------
+
+
+-- create a branch mergeconflict and make some changes in existing file eg index.js
+--commit the changes
+--move to master branch. 
+--make some changes in the same file above, index.js
+--commit the changes
+--git merge mergeconflict
+--will get error of merge conflict
+
+--git diff master mergeconflict
+--git merge mergeconflict
+--git mergetool
+--select with code is needed and save.
+--git commit -m "resolve merge conflict"
+--open gitignore and enter  *.orig , save and close the file
+--git commit the changes
+
+
+----------------move and rename----
+git mv string.c src/
+git mv string.c string_operations.c
+
+---------------git tag-----------
+git tag
+git tag -a 'Release_1_0' -m 'Tagged basic string operation code' HEAD
+git push origin tag Release_1_0
+git tag -d Release_1_0
+
+-----------------------------------Rebase-------------------------------------
+// to remove headache of merge in future
+--create a new branch myfeature
+--git checkout myfeature
+--create a file and add some line
+--git checkout master
+--open readme file
+--add some line.
+--git commit -am "add"
+--git log --oneline --all --decorate --graph
+--git checkout myfeature
+--git rebase master 
+--git log --oneline --all --decorate --graph
+--make some change in readme
+--commit
+--git log --oneline --all --decorate --graph
+
+-----------------------------------stash---------------------------------
+//save the incomplete changes in stash, can move to other branch and then come back to the branch again.
+--git status -s
+--git stash  //for save the file and will not populate in git status .
+--git stash list
+--git status -s
+--git stash pop //you can checkout to old branch again and pop and old work will be back and you can continue to work from where you have left.
+
+--git stash pop // poping the stash
+--git stash apply //
+--git stash drop //
+
+--change in a file 
+--git stash save "simple changes"  //multiple stash with message
+--change in a file 
+--git stash save "index changes"   //multiple stash with message
+--change in a file 
+--git stash save "index changes"   //multiple stash with message
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
