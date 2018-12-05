@@ -230,6 +230,7 @@ git tag -d Release_1_0
 --git stash apply //
 --git stash drop //
 
+-------------multiple stach
 --change in a file 
 --git stash save "simple changes"  //multiple stash with message
 --change in a file 
@@ -237,9 +238,57 @@ git tag -d Release_1_0
 --change in a file 
 --git stash save "index changes"   //multiple stash with message
 
+------------stash show
+--git stash list
+--git stash show stash@{1}
+--git stash apply stash@{1}  //apply on a particular stash
+--git stash drop stash@{1} //drop particular stash
+--git stash list
+--git stash clear //remove all the stash
+--git stash -u  // to save all files
 
+-----------------stash to a branch
+--git stash branch newchanges //new branch created, switch to this, and stash   apply and same stash drop
 
+-----------------------tagging----------------------------------------
+//tags are label we can give to any commit in history.
 
+--git tag mytag
+--git tag --list
+--git tag --delete mytag
+
+-------------annotated tags
+--git tag -a v-1.0   //for major milestone in code or release
+
+------------comparing tags
+--git tag -a v-1.0
+--git commit --amend  //amend the message
+or
+--git tag v-1.2 -m "REelease 1.2"
+--git tag --list
+--git diff v-1.0 v-1.2
+--git difftool v-1.0 v-1.2
+
+cmd q to quit
+
+--------------git tagging
+--git tag -a v-0.9-beta 9879876 //unable to tag a commit, commit id 9879876,
+                                -a for annotating
+
+--------------updating tags
+--git tag -a v-0.8-alpha -f 9879876 //commit id, -f for force
+
+--------------push a tag
+git push origin v-0.8-alpha
+
+git push origin :v-0.8-alpha  //delete a tag, still have in local but not in                                  remote
+
+---------------------------Reset and reflog----------------------------------
+//Reset the head, 
+//Remove the last commit and point to second last
+
+--git log --graph --decorate --all --oneline
+--git 
 
 
 
