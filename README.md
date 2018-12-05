@@ -295,8 +295,15 @@ git push origin :v-0.8-alpha  //delete a tag, still have in local but not in    
 --git reset e397653 //commit id, back to that particular commit
 --git reset HEAD@{2}
 
+----------------------------comparing on github---------------
 
-//recover within 60 days
+
+----------------------------stash vs branch-------------------
+
+----git help stash
+
+
+//any change in github can be recover within 60 days
 
 
 
